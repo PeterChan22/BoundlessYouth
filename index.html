@@ -32,6 +32,7 @@
     <header class="header fade-in">
         <div class="title-container">
             <h1>无界青年论坛</h1>
+            <div class="title-english">Boundless Youth Forum</div>
         </div>
         <nav class="nav-center">
             <ul class="nav-menu-center">
@@ -136,9 +137,9 @@
                 
                 <div class="qr-code-item">
                     <div class="qr-code-placeholder">
-                        <img src="微信群 copy.png" alt="官方群聊" width="150" height="150">
+                        <img src="微信小助手.jpg" alt="官方群聊" width="150" height="150">
                     </div>
-                    <div class="qr-code-title">官方群聊</div>
+                    <div class="qr-code-title">微信小助手</div>
                 </div>
             </div>
         </div>
@@ -150,30 +151,26 @@
             <div class="en-title">CONTACT US</div>
         </div>
         <div class="section-content">
-            <p>如果您有任何问题或建议，请随时与我们联系。我们会尽快回复您的留言。</p>
-            <form class="contact-form">
-                <div class="form-grid">
-                    <div class="form-field">
-                        <label for="lastName">姓</label>
-                        <input type="text" id="lastName" name="lastName" required>
-                    </div>
-                    <div class="form-field">
-                        <label for="firstName">名</label>
-                        <input type="text" id="firstName" name="firstName" required>
-                    </div>
-                    <div class="form-field full-width">
-                        <label for="email">邮箱地址</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-field full-width">
-                        <label for="message">留言</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                    </div>
-                </div>
-                <button type="submit" class="submit-btn">提交</button>
-            </form>
+            <p>申请加入论坛需要填写问卷。我们收到您的信息后，将尽快与您联系并安排面谈！</p>
+    
+            <!-- Styled Button to Toggle the Form Visibility -->
+            <button class="learn-more-btn" onclick="toggleForm()">填写问卷</button>
+    
+            <!-- Hidden Form Container -->
+            <div id="form-container" style="display: none; margin-top: 20px;">
+                <script type='text/javascript' src='https://www.wjx.cn/handler/jqemed.ashx?activity=wFbMc1s&width=750&source=iframe'></script>
+            </div>
         </div>
     </section>
+
+    <script>
+        function toggleForm() {
+            const formContainer = document.getElementById('form-container');
+            // Toggle display between 'none' (hidden) and 'block' (visible)
+            formContainer.style.display = formContainer.style.display === 'none' ? 'block' : 'none';
+        }
+        </script>
+        
 
     <footer class="footer fade-in">
         <p style="text-align: center;">&copy; 2025 无界青年论坛. 保留所有权利。</p>
@@ -183,4 +180,3 @@
 
 </body>
 </html>
-
