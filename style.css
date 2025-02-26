@@ -119,16 +119,85 @@
     flex-direction: column;
 }
 
+/* Enhanced title styling */
 .title-container {
     text-align: center;
-    padding-top: 40px;
+    padding: 60px 0 40px;
+    position: relative;
 }
 
-.header h1 {
-    font-size: 6rem;
-    font-weight: bold;
+.title-container h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
     color: #000;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 2px;
 }
+
+.title-container h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        rgba(144, 168, 144, 0.9),
+        rgba(206, 222, 100, 0.9),
+        rgba(255, 198, 145, 0.9),
+        rgba(200, 191, 231, 0.9)
+    );
+    border-radius: 2px;
+}
+
+.title-english {
+    font-size: 1.5rem;
+    color: #666;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+/* Add animation for the title */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title-container h1 {
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.title-english {
+    animation: fadeInUp 1.2s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .title-container {
+        padding: 40px 0 30px;
+    }
+    
+    .title-container h1 {
+        font-size: 2.8rem;
+    }
+    
+    .title-english {
+        font-size: 1rem;
+    }
+}
+
 
 .bottom-content {
     display: flex;
@@ -207,18 +276,74 @@ margin: 0;
 color: #333;
 }
 
+/* Services List (Cards) */
 .achievement-list {
-margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three-column layout */
+    gap: 30px;
+    margin-top: 30px;
 }
 
+/* Individual Service Item */
 .achievement-item {
-margin-bottom: 20px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+/* Hover Effect */
+.achievement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Service Heading */
 .achievement-item h3 {
-font-size: 1.2rem;
-font-weight: bold;
-margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+/* List Styling */
+.achievement-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.achievement-item ul li {
+    margin-bottom: 12px;
+}
+
+.achievement-item ul li p {
+    font-size: 1rem;
+    color: #000000;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .achievement-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .achievement-list {
+        grid-template-columns: 1fr;
+    }
 }
 
 .learn-more-btn {
@@ -421,8 +546,31 @@ margin-top: 10px;
         padding-bottom: 40px;
     }
 
+    /* Make site name smaller on mobile */
+    .site-name {
+        font-size: 1.2rem;
+    }
+    
+    /* Make logo smaller on mobile */
+    .logo {
+        width: 60px;
+        height: 50px;
+    }
+    
+    /* Make slogan smaller on mobile */
     .slogan {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
+        margin-bottom: 1.4rem;
+    }
+    
+    /* Adjust spacing in the bottom content area */
+    .bottom-content {
+        gap: 30px;
+    }
+    
+    /* Further adjustments to maintain proportions */
+    .slogan-container {
+        padding-bottom: 30px;
     }
 
     .gradient-box {
