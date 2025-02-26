@@ -323,28 +323,6 @@ color: #333;
     line-height: 1.6;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .section-title {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .achievement-list {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .achievement-list {
-        grid-template-columns: 1fr;
-    }
-}
 
 .learn-more-btn {
 display: inline-block;
@@ -541,9 +519,21 @@ margin-top: 10px;
         gap: 40px;
     }
 
+    .title-container {
+        padding: 40px 0 30px;
+    }
+    
+    .title-container h1 {
+        font-size: 2.8rem;
+    }
+    
+    .title-english {
+        font-size: 1rem;
+    }
+
     .slogan-container {
         max-width: 100%;
-        padding-bottom: 40px;
+        padding-bottom: 30px;
     }
 
     /* Make site name smaller on mobile */
@@ -567,10 +557,9 @@ margin-top: 10px;
     .bottom-content {
         gap: 30px;
     }
-    
-    /* Further adjustments to maintain proportions */
-    .slogan-container {
-        padding-bottom: 30px;
+
+    .achievement-list {
+        grid-template-columns: 1fr;
     }
 
     .gradient-box {
