@@ -904,4 +904,67 @@ img[alt="Jingrui Han"] {
     object-fit: cover;
     width: 100%;
     height: 100%;
-}      
+}
+
+.slider-container {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    overflow: hidden;
+}
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform;
+}
+.slider-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: none;
+    background: linear-gradient(to right, rgba(144, 168, 144, 0.1), rgba(255, 255, 255, 0.9));
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin: 0 10px;
+}
+.slider-item.active {
+    display: block;
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #90A890;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0.85;
+    transition: background 0.2s;
+}
+.slider-btn:hover {
+    background: #CED664;
+}
+.slider-btn-left {
+    left: 10px;
+}
+.slider-btn-right {
+    right: 10px;
+}
+@media (max-width: 768px) {
+    .slider-container {
+        max-width: 98vw;
+    }
+    .slider-item {
+        padding: 18px;
+    }
+    .slider-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+    }
+}
