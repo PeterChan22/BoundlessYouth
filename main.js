@@ -37,3 +37,27 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeInSections.forEach(section => observer.observe(section));
 });
 
+// Slider for activities
+(function() {
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const sliderItems = document.querySelectorAll('.slider-item');
+    const btnLeft = document.querySelector('.slider-btn-left');
+    const btnRight = document.querySelector('.slider-btn-right');
+    let current = 0;
+    function showSlide(idx) {
+        sliderItems.forEach((item, i) => {
+            item.classList.toggle('active', i === idx);
+        });
+    }
+    if (btnLeft && btnRight && sliderItems.length > 1) {
+        btnLeft.addEventListener('click', () => {
+            current = (current - 1 + sliderItems.length) % sliderItems.length;
+            showSlide(current);
+        });
+        btnRight.addEventListener('click', () => {
+            current = (current + 1) % sliderItems.length;
+            showSlide(current);
+        });
+    }
+})();
+
